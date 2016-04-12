@@ -1,4 +1,5 @@
 path= require 'path'
+mkdirp= require 'mkdirp'
 koa= require('koa')
 koaBody= require('koa-body')
 route= require('koa-route')
@@ -12,6 +13,7 @@ app.use koaBody({
         onFileBegin: (name, file)->
             folder= path.dirname(file.path)
             file.path= path.join(folder, file.name)
+            mkdirp.sync path.dirname(file.path)
 })
 
 app.use route.post '/', ->
