@@ -1,0 +1,26 @@
+{
+  "name": "teaTime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.coffee",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script/register --harmony  test/**/*.coffee",
+    "test-koa": "mocha --compilers coffee:coffee-script/register --harmony  test/koa_body/*.coffee"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "should": "^8.3.0",
+    "supertest": "^1.2.0"
+  },
+  "dependencies": {
+    "koa": "^1.2.0",
+    "koa-route": "^2.4.2",
+    "koa-body": "^1.4.0",
+    "koa-resource-router": "^0.4.0"
+  }
+}
